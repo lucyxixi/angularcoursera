@@ -1,0 +1,44 @@
+<div class="container"
+    fxLayout="row"
+    fxLayout.sm="column"
+    fxLayout.xs="column"
+    fxLayoutAlign.gt-md="space-around center"
+    fxLayoutGap="10px" 
+    fxLayoutGap.xs="0">
+
+  <div fxFlex="40">
+    <div *ngIf="dish">
+	 	<md-card>
+	 		<md-card-header>
+	 			<md-card-title>
+	 				<h3>{{ dish.name | uppercase }}</h3>
+	 			</md-card-title>
+	 		</md-card-header>
+	 			<img md-card-image src="{{dish.image}}" alt="dish.name">
+	 		<md-card-content>
+	 			<p>Category:  {{ dish.category | uppercase }}</p>
+	 			<p>Label:  {{ dish.label | uppercase }}</p>
+	 			<p>Price:  {{ dish.price | uppercase }}</p>
+	 			<p>{{ dish.description }}</p>
+	 		</md-card-content>
+	 		<md-card-actions>
+	 			<button md-button>LINE</button>
+	 			<button md-button>SHARE</button>
+	 		</md-card-actions>
+	 	</md-card>
+	 </div>
+  </div>
+
+
+  <div fxFlex="40">
+  	<md-list *ngIf="dish">
+  		<h3>Comments of {{ dish.name | uppercase }}</h3>
+	 	<md-list-item *ngFor="let comment of dish.comments">
+	 		<p md-line>Rating:  {{ comment.rating }}</p>
+			<p md-line>Comment:  {{ comment.comment }}</p>
+ 			<p md-line>Author:  {{ comment.author }}</p>
+ 			<p md-line>Date:  {{ comment.date | date }}</p>
+	 	</md-list-item>
+	 </md-list>	   
+  </div>
+</div>
