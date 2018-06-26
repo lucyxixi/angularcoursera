@@ -5,7 +5,8 @@ import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconMod
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import 'hammerjs';
 
 import { AppComponent } from './app.component';
@@ -53,7 +54,9 @@ import { LoginComponent } from './login/login.component';
     MatFormFieldModule,
     FlexLayoutModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [ DishService,PromotionService,LeaderService ],
   entryComponents: [
