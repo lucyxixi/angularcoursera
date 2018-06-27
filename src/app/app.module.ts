@@ -5,9 +5,11 @@ import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconMod
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule,ReactiveFormsModule } from '@angular/forms'; 
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import 'hammerjs';
+
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
@@ -48,7 +50,7 @@ import { LoginComponent } from './login/login.component';
     MatIconModule,
     MatSelectModule,
     MatGridListModule,
-    MatDialogModule, 
+    MatDialogModule,
     MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
@@ -56,7 +58,8 @@ import { LoginComponent } from './login/login.component';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    MatProgressSpinnerModule
   ],
   providers: [ DishService,PromotionService,LeaderService ],
   entryComponents: [
