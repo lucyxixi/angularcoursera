@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule,MatGridListModule,MatDialogModule,MatDialogRef,MatCheckboxModule } from '@angular/material';
+import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule,MatGridListModule,MatDialogModule,MatDialogRef,MatCheckboxModule,MatSliderModule } from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
@@ -60,6 +60,7 @@ import { LoginComponent } from './login/login.component';
     MatCheckboxModule,
     MatInputModule,
     MatFormFieldModule,
+    MatSliderModule,
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
