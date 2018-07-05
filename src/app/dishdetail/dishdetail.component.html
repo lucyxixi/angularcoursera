@@ -6,8 +6,8 @@
     fxLayoutGap="10px"
     fxLayoutGap.xs="0">
 
-  <div fxFlex="40">
-    <div *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+
 	 	<mat-card>
 	 		<mat-card-header>
 	 			<mat-card-title>
@@ -32,15 +32,15 @@
         <span class="fa fa-chevron-right fa-lg"></span>
       </mat-card-actions>
 	 	</mat-card>
-	 </div>
+
   </div>
 
 
-  <div fxFlex="40">
-  	<mat-list *ngIf="dish">
+  <div fxFlex="40" *ngIf="dish" [@visibility]="visibility">
+  	<mat-list>
   		<h3>Comments of {{ dish.name | uppercase }}</h3>
 	 	<mat-list-item *ngFor="let comment of dish.comments">
-	 		<p mat-line>Rating:  {{ comment.rating }}</p>
+	 		<p mat-line><span class="fa fa-star fa-lg"></span> {{ comment.rating }}</p>
 			<p mat-line>Comment:  {{ comment.comment }}</p>
  			<p mat-line>Author:  {{ comment.author }}</p>
  			<p mat-line>Date:  {{ comment.date | date }}</p>
