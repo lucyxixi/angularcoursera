@@ -27,6 +27,7 @@ import { DishService } from './services/dish.service';
 import { PromotionService } from './services/promotion.service';
 import { LeaderService } from './services/leader.service';
 import { ProcessHTTPMsgService } from './services/process-httpmsg.service';
+import { FeedbackService } from './services/feedback.service';
 
 import { baseURL } from './shared/baseurl';
 import { RestangularConfigFactory } from './shared/restConfig';
@@ -51,24 +52,11 @@ import { HighlightDirective } from './directives/highlight.directive';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatCardModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatSelectModule,
-    MatGridListModule,
-    MatDialogModule,
-    MatCheckboxModule,
-    MatInputModule,
-    MatFormFieldModule,
-    MatSliderModule,
+    MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule, MatIconModule,MatSelectModule,MatGridListModule,MatDialogModule,  MatCheckboxModule,MatInputModule,MatFormFieldModule,MatSliderModule,    MatSlideToggleModule,MatProgressSpinnerModule,
     FlexLayoutModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSlideToggleModule,
-    MatProgressSpinnerModule,
     HttpClientModule,
     RestangularModule.forRoot(RestangularConfigFactory)
   ],
@@ -77,7 +65,8 @@ import { HighlightDirective } from './directives/highlight.directive';
     PromotionService,
     LeaderService,
     ProcessHTTPMsgService,
-    {provide: 'BaseURL', useValue: baseURL}
+    {provide: 'BaseURL', useValue: baseURL},
+    FeedbackService
 ],
   entryComponents: [
         LoginComponent

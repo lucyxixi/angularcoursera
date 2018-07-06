@@ -3,10 +3,8 @@ import { Observable,of } from 'rxjs';
 import { delay } from 'rxjs/operators';
 import { map, catchError } from 'rxjs/operators';
 import 'rxjs/add/observable/of';
-import { HttpClient } from '@angular/common/http';
-import { Restangular } from 'ngx-restangular';
+import { RestangularModule, Restangular } from 'ngx-restangular';
 
-import { baseURL } from '../shared/baseurl';
 import { ProcessHTTPMsgService } from './process-httpmsg.service';
 import { Dish } from '../shared/dish';
 
@@ -15,8 +13,7 @@ import { Dish } from '../shared/dish';
 })
 export class DishService {
 
-  constructor(private http: HttpClient,
-    private processHTTPMsgService: ProcessHTTPMsgService,
+  constructor(
     private restangular: Restangular) { }
 
   getDishes(): Observable<Dish[]> {

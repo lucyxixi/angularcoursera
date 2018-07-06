@@ -1,6 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
@@ -9,23 +8,21 @@ import 'rxjs/add/operator/switchMap';
 import { Dish } from '../shared/dish';
 import {Comment} from '../shared/comment';
 import { DishService } from '../services/dish.service';
-import { visibility } from '../animations/app.animation';
-import { flyInOut,expand } from '../animations/app.animation';
+import { visibility,flyInOut,expand } from '../animations/app.animation';
 
 
 @Component({
   selector: 'app-dishdetail',
   templateUrl: './dishdetail.component.html',
   styleUrls: ['./dishdetail.component.scss'],
-  animations: [
-    visibility()
-  ],
+
     // tslint:disable-next-line:use-host-property-decorator
   host: {
   '[@flyInOut]': 'true',
   'style': 'display: block;'
   },
   animations: [
+    visibility(),
     flyInOut(),
     expand()
   ]
@@ -73,16 +70,13 @@ export class DishdetailComponent implements OnInit {
       this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds,errmess => this.dishErrMess = <any>errmess.message);
       this.route.params.pipe(switchMap((params: Params) => { this.visibility = 'hidden'; return this.dishservice.getDish(+params['id']); }))
       .subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); this.visibility = 'shown'; },errmess => this.dishErrMess = <any>errmess.message);
-      this.route.params.switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); }).subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },errmess => {  this.dish = null; this.dishErrMess = <any>errmess.message; });
-
-
+      // this.route.params.switchMap((params: Params) => { return this.dishservice.getDish(+params['id']); }).subscribe(dish => { this.dish = dish; this.dishcopy = dish; this.setPrevNext(dish.id); },errmess => {  this.dish = null; this.dishErrMess = <any>errmess.message; });
     }
 
     setPrevNext(dishId: number) {
-      let index = this.dishIds.indexOf(dishId);
-      let len = this.dishIds.length;
-      this.prev = this.dishIds[(len + index - 1) % len];
-      this.next = this.dishIds[(len + index + 1) % len];
+      const index = this.dishIds.indexOf(dishId);
+      this.prev = this.dishIds[(this.dishIds.length + index - 1) % this.dishIds.length];
+      this.next = this.dishIds[(this.dishIds.length + index + 1) % this.dishIds.length];
     }
 
     goBack(): void {
