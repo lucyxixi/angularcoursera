@@ -1,13 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule,MatGridListModule,MatDialogModule,MatDialogRef,MatCheckboxModule,MatSliderModule } from '@angular/material';
-import {MatInputModule} from '@angular/material/input';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatButtonModule,MatCardModule,MatMenuModule,MatToolbarModule,MatIconModule,MatSelectModule,MatGridListModule,MatDialogModule,MatCheckboxModule,MatSliderModule,MatInputModule,MatFormFieldModule,MatSlideToggleModule,MatProgressSpinnerModule } from '@angular/material';
+// import {MatInputModule} from '@angular/material/input';
+// import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+// import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+// import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { HttpClientModule } from '@angular/common/http';
 import { RestangularModule, Restangular } from 'ngx-restangular';
 import 'hammerjs';
