@@ -8,9 +8,11 @@ describe('workspace-project App', () => {
     page = new AppPage();
   });
 
-  it('should display Ristorante Con Fusion message', () => {
+  it('should display Ristorante Con Fusion message or should display message saying Ristorante Con Fusion', () => {
    page.navigateTo('/');
-   expect(page.getParagraphText('app-root h1')).toEqual('Ristorante Con Fusion');
+   const navlink = page.getAllElements('a').get(1);
+   navlink.click();
+   expect(page.getParagraphText('h3')).toBe('About Us');
   });
 
   it('should navigate to aboutus by clicking on the link', () =>{
